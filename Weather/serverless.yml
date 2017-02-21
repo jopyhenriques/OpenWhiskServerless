@@ -1,0 +1,16 @@
+# This file is the main config file for the Weather service.
+
+service: weather_activity
+
+provider:
+  name: openwhisk
+
+functions:
+  weather:
+    handler: weather.main
+    events:
+      - http: GET weather
+
+# remember to run npm install to download the provider plugin.        
+plugins:
+    - serverless-openwhisk
