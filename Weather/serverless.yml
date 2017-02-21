@@ -7,7 +7,7 @@ provider:
 
 functions:
   weather:
-    handler: weather.main
+    handler: handler.weather
     events:
       - http: GET weather
 
