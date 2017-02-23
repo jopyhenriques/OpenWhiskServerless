@@ -1,0 +1,16 @@
+# This file is the main config file for the Weather service.
+
+service: ui_test
+
+provider:
+  name: openwhisk
+
+functions:
+  weather:
+    handler: handler.ui
+    events:
+      - http: GET ui
+
+# remember to run npm install to download the provider plugin.        
+plugins:
+    - serverless-openwhisk
